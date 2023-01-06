@@ -109,8 +109,9 @@ public class EX2_1 {
     }
 
     public static void main(String[] args) {
-        String[] arr = new String[10000];
-        arr = createTextFiles(arr.length, arr.length/15, arr.length/7);
+        String[] arr = new String[15000];
+        arr = createTextFiles(arr.length, arr.length/10
+                , arr.length);
         long start= System.currentTimeMillis();
         System.out.print("without threads number of line is "+getNumOfLines(arr));
         long end=System.currentTimeMillis();
