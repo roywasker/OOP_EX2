@@ -65,7 +65,7 @@ public class EX2_1 {
      * @param fileNames array of all file name.
      * @return number of all line in file together.
      */
-    public static int getNumOfLinesThreads(String[] fileNames) {
+    public int getNumOfLinesThreads(String[] fileNames) {
         int NumOfLines = 0;
         List<GetLineThreads> threads = new ArrayList<>();
         for (int i = 0; i < fileNames.length; i++) {
@@ -88,7 +88,7 @@ public class EX2_1 {
      * @param fileNames array of all file name.
      * @return number of all line in file together.
      */
-    public static int getNumOfLinesThreadPool(String[] fileNames) {
+    public int getNumOfLinesThreadPool(String[] fileNames) {
         int NumOfLines = 0;
         ExecutorService executor = Executors.newFixedThreadPool(fileNames.length);
         List<Future> futures = new ArrayList<>();
@@ -109,19 +109,19 @@ public class EX2_1 {
     }
 
     public static void main(String[] args) {
-        String[] arr = new String[15000];
-        arr = createTextFiles(arr.length, arr.length/10
-                , arr.length);
+        String[] arr = new String[10000];
+        EX2_1 test = new EX2_1();
+        arr = createTextFiles(arr.length, arr.length/5, arr.length);
         long start= System.currentTimeMillis();
         System.out.print("without threads number of line is "+getNumOfLines(arr));
         long end=System.currentTimeMillis();
         System.out.println(" and time is take to cal is  "+(end-start)+" ms");
         start=System.currentTimeMillis();
-        System.out.print("with threads number of line is "+getNumOfLinesThreads(arr));
+        System.out.print("with threads number of line is "+test.getNumOfLinesThreads(arr));
         end=System.currentTimeMillis();
         System.out.println(" and time is take to cal is  "+(end-start)+" ms");
         start=System.currentTimeMillis();
-        System.out.print("with threadpool number of line is "+getNumOfLinesThreads(arr));
+        System.out.print("with threadpool number of line is "+test.getNumOfLinesThreadPool(arr));
         end=System.currentTimeMillis();
         System.out.println(" and time is take to cal is  "+(end-start)+" ms");
         delete(arr);
