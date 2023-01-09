@@ -21,7 +21,7 @@ public class Tests {
         var sumTask = customExecutor.submit(task);
         final int sum;
         try {
-            sum = sumTask.get(1, TimeUnit.MILLISECONDS);
+            sum = (int) sumTask.get(1, TimeUnit.MILLISECONDS);
         } catch (InterruptedException | ExecutionException | TimeoutException e) {
             throw new RuntimeException(e);
         }
@@ -40,8 +40,8 @@ public class Tests {
         final Double totalPrice;
         final String reversed;
         try {
-            totalPrice = priceTask.get();
-            reversed = reverseTask.get();
+            totalPrice = (Double) priceTask.get();
+            reversed = (String) reverseTask.get();
         } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException(e);
         }
