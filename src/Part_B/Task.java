@@ -1,5 +1,6 @@
 package Part_B;
 
+import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 
@@ -44,16 +45,16 @@ public class Task<T> extends FutureTask<T> implements Comparable<Task<T>> {
     }
 
     @Override
-    public boolean equals(Object other) {
-        if (other == this) {
-            return true;
-        }
-        return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Task<?> task = (Task<?>) o;
+        return priority == task.priority;
     }
 
     @Override
     public int hashCode() {
-        return Integer.hashCode(priority);
+        return Objects.hash(priority);
     }
 
     @Override

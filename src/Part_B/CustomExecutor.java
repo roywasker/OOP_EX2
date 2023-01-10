@@ -32,15 +32,6 @@ public class CustomExecutor<T> extends ThreadPoolExecutor {
         Task<T> task = new Task<T>(operation, type.getPriorityValue());
         return submit(task);
     }
-    @Override
-    protected void beforeExecute(Thread t, Runnable r) {
-        super.beforeExecute(t,r);
-        if (this.getQueue().isEmpty()){
-            maxPriority=0;
-        }else if (getCurrentMax()>maxPriority){
-            maxPriority=getCurrentMax();
-        }
-    }
 
     @Override
     protected void afterExecute(Runnable r, Throwable t) {
@@ -56,7 +47,14 @@ public class CustomExecutor<T> extends ThreadPoolExecutor {
         return this.maxPriority;
     }
     public void gracefullyTerminate(){
-        this.shutdown();
+        try {
+            this.shutdown();
+            if (!this.awaitTermination(500, TimeUnit.MILLISECONDS)) {
+                this.shutdownNow();
+            }
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
     }
 
 }
