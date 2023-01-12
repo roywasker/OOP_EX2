@@ -27,7 +27,7 @@ GetLineThreadpool is a class that implements Callable <Integer> and contains 2 v
 Also, contains a "call" method that calculates the number of lines in those files using ThreadPool and return and result.<br><br>
 
 In addition, we wrote a test class in order to compare the times differences of the calculation in those three methods.<br><br><br>
-Attached is a picture of the calculation and times for each of the three methods :
+Attached below is a picture of the calculation and times for each of the three methods :
 
 <img src="EX2_1 tests.png" alt="EX2_1 tests.png" title="EX2_1 tests.png">
 
