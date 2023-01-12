@@ -51,6 +51,12 @@ public class CustomExecutor<T> extends ThreadPoolExecutor {
         Task<T> task = Task.createTask(operation,type);
         return mySubmit(task);
     }
+
+    /**
+     *Submits a Task <T> task for execution and returns a Future representing that task.
+     * @param task the task to submit.
+     * @return a Future representing pending completion of the task.
+     */
     public <T> Future<T> mySubmit(Task <T> task){
         arrOfPriority[task.getPriority()-1]++;
         if (this.maxPriority<task.getPriority())
