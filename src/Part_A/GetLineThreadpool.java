@@ -15,8 +15,8 @@ public class GetLineThreadpool implements Callable <Integer> {
 
 
     /**
-     * The method count how much line the file have
-     * @return number of line current file have
+     * The method count how much line the file have.
+     * @return number of line current file have.
      */
     @Override
     public Integer call()  {

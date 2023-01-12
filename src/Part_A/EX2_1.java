@@ -9,10 +9,10 @@ import java.util.concurrent.*;
 public class EX2_1 {
 
     /**
-     * This method receiveb how much file to create and create them.
+     * This method receive how much file to create and create them.
      * @param n number of file to create.
-     * @param seed
-     * @param bound
+     * @param seed seed for the random function
+     * @param bound bound for the random function
      * @return array of all file name.
      */
     public static String[] createTextFiles(int n, int seed, int bound) {
@@ -108,28 +108,11 @@ public class EX2_1 {
         return NumOfLines;
     }
 
-    public static void main(String[] args) {
-        String[] arr = new String[10000];
-        EX2_1 test = new EX2_1();
-        arr = createTextFiles(arr.length, arr.length/5, arr.length);
-        long start= System.currentTimeMillis();
-        System.out.print("without threads number of line is "+getNumOfLines(arr));
-        long end=System.currentTimeMillis();
-        System.out.println(" and time is take to cal is  "+(end-start)+" ms");
-        start=System.currentTimeMillis();
-        System.out.print("with threads number of line is "+test.getNumOfLinesThreads(arr));
-        end=System.currentTimeMillis();
-        System.out.println(" and time is take to cal is  "+(end-start)+" ms");
-        start=System.currentTimeMillis();
-        System.out.print("with threadpool number of line is "+test.getNumOfLinesThreadPool(arr));
-        end=System.currentTimeMillis();
-        System.out.println(" and time is take to cal is  "+(end-start)+" ms");
-        delete(arr);
-    }
-
-
-    // delete all the file remove before submitting the assignment
-    private static void delete(String[] fileNames) {
+    /**
+     * Delete all the txt file created.
+     * @param fileNames Array of file name.
+     */
+    public static void delete(String[] fileNames) {
         for (String fileName : fileNames) {
             File myObj = new File(fileName);
             myObj.delete();

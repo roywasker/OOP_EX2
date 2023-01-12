@@ -15,7 +15,7 @@ public class GetLineThreads extends Thread{
     }
 
     /**
-     * The method count how much line the file have
+     * The method count how much line the file have.
      */
     public void run(){
         try {
