@@ -9,13 +9,14 @@ public class GetLineThreads extends Thread{
     private String FileName;
     private int NumOfLine=0;
 
+    // constructor
     public GetLineThreads(String FileName){
         super(FileName);
         this.FileName=FileName;
     }
 
     /**
-     * The method count how much line the file have.
+     * This method count the number of lines in the file.
      */
     public void run(){
         try {
@@ -30,6 +31,10 @@ public class GetLineThreads extends Thread{
         }
     }
 
+    /**
+     * getter method for the NumOfLine attribute
+     * @return
+     */
     public int getNumOfLine() {
         return NumOfLine;
     }

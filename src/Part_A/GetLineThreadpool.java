@@ -9,14 +9,18 @@ public class GetLineThreadpool implements Callable <Integer> {
     private String FileName;
     private int NumOfLine=0;
 
+    /**
+     * getter method for the FileName attribute
+     * @param FileName
+     */
     public GetLineThreadpool(String FileName){
         this.FileName=FileName;
     }
 
 
     /**
-     * The method count how much line the file have.
-     * @return number of line current file have.
+     * This method count the number of lines in the file.
+     * @return number of lines.
      */
     @Override
     public Integer call()  {
