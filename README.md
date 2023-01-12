@@ -33,10 +33,11 @@ Attached below is a picture of the calculation and times for each of the three m
 
 According to the times we can see threads is the fastest, followed by a relatively small difference the ThreadPool and finally the method without threads.
 
-The differences in times are because the number of lines are calculated with Threads we defined the amount of Threads as the amount of files, so the calculation happens simultaneously in all the files ,so it finished first.<br><br>
+The differences in the times are because the number of lines that been calculated with Threads.
+We defined the amount of Threads as the amount of files, so the calculation happens simultaneously in all the files, so it finished first.<br><br>
 On the other hand, with ThreadPool we also calculate all the lines at the same time as with Threads, but because of the process of creating the ThreadPool which takes more time, it is slightly slower than a normal Thread.<br><br>
 And finally, without Threads at all, we perform the calculation one file after the other and not at the same time, therefore it is the slowest.<br><br>
-Attached is a picture of the UML diagram :
+Attached below is a picture of the UML diagram :
 
 <img src="EX2_1 diagram.png" alt="EX2_1 diagram.png" title="EX2_1 diagram.png">
 
