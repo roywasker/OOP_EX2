@@ -3,30 +3,30 @@ Assignment 2 of the course Object-Oriented Programming by Roy Wasker and Yuval D
 
 ##  Overview
 
-In part A we created several text files and calculated the total number of lines in these files.<br>
-in three methods : <br>
+In part A we created several text files and calculated the total number of lines in those files.<br>
+We calaculated this in three different methods : <br>
 • Normal method without using Threads<br>
 • Using Threads<br>
 • Using ThreadPool<br>
 
-In part B we created ThreadPool that is implemented on a priority queue ,<br> 
+In part B we created ThreadPool that is implemented by priority queue. <br> 
 in addition to each task submitted to the queue you can receive the task's result.
 
 ## Part A
 
 In this part we created 3 departments to perform the task,
-Class EX2_1 in which there are several methods that create several text files at the user's request and writes a number of lines to each file randomly according to the input from the user.
-3 methods that receive an array of file names and calculate the total number of lines in the files in the three methods: without trads, with trads and with ThreadPool.<br>
-And finally a method that will delete all the created files.
+Class EX2_1 in which there are several methods that create several text files by the user's request and writes a number of lines to each file randomly according to the input from the user.
+3 methods that receive an array of file's names and calculate the total number of lines in those files, all in three different methods: without threads, with threads, and with ThreadPool.<br>
+and finally a method that will delete all the created files.
 
 <br>
-GetLineThreads class that extends from the Thread class and contains 2 variables, the array of names and an integer that returns the number of lines.<br>
-And a run method that calculates the number of lines in files with Threads.<br><br>
+GetLineThreads class is a class that extends from the Thread class and contains 2 variables, the array of names and an integer that returns the number of lines.<br>
+Also, contains a "run" method that calculates the number of lines in those files using Threads.<br><br>
 
-GetLineThreadpool class that implements Callable <Integer> and contains 2 variables, the array of names and an integer that returns the number of lines.<br>
-And a call method that calculates the number of lines in files with ThreadPool and return and result.<br><br>
+GetLineThreadpool is a class that implements Callable <Integer> and contains 2 variables, the array of names and an integer that returns the number of lines.<br>
+Also, contains a "call" method that calculates the number of lines in those files using ThreadPool and return and result.<br><br>
 
-In addition, we write a test class to compare the times of performing the calculation in the three methods.<br><br><br>
+In addition, we wrote a test class in order to compare the times differences of the calculation in those three methods.<br><br><br>
 Attached is a picture of the calculation and times for each of the three methods :
 
 <img src="EX2_1 tests.png" alt="EX2_1 tests.png" title="EX2_1 tests.png">
