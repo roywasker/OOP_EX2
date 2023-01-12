@@ -9,11 +9,13 @@ import java.util.concurrent.*;
 public class EX2_1 {
 
     /**
-     * This method receive how much file to create and create them.
-     * @param n number of file to create.
-     * @param seed seed for the random function
-     * @param bound bound for the random function
-     * @return array of all file name.
+     * this method creates n text files in a specific path.
+     * each file contains a random number of lines of a certain string.
+     * In the end the function returns a String Array with the names of the files in it.
+     * @param n - number of text files
+     * @param seed - initial value of the internal state of the pseudorandom number generator
+     * @param bound - the range of number of lines in each file, 0(inclusive) to bound(exclusive)
+     * @return the String array of the files names
      */
     public static String[] createTextFiles(int n, int seed, int bound) {
 
@@ -39,9 +41,10 @@ public class EX2_1 {
     }
 
     /**
-     * This method count how much line all the file have without threads.
-     * @param fileNames array of all file name.
-     * @return number of all line in file together.
+     * this method gets a String array of files names and
+     * summarize the total number of lines in all the files combine.
+     * @param fileNames - String array that contains names of files
+     * @return number of total lines
      */
     public static int getNumOfLines(String[] fileNames) {
         int NumOfLines = 0;
@@ -61,9 +64,10 @@ public class EX2_1 {
     }
 
     /**
-     * This method count how much line all the file have with threads.
-     * @param fileNames array of all file name.
-     * @return number of all line in file together.
+     * this method gets a String array of files names and
+     * summarize the total number of lines in all the files combine, using threads.
+     * @param fileNames - String array that contains names of files
+     * @return number of total lines
      */
     public int getNumOfLinesThreads(String[] fileNames) {
         int NumOfLines = 0;
@@ -84,9 +88,10 @@ public class EX2_1 {
     }
 
     /**
-     * This method count how much line all the file have with threadpool.
-     * @param fileNames array of all file name.
-     * @return number of all line in file together.
+     * this method gets a String array of files names and
+     * summarize the total number of lines in all the files combine, using ThreadPool.
+     * @param fileNames - String array that contains names of files
+     * @return number of total lines
      */
     public int getNumOfLinesThreadPool(String[] fileNames) {
         int NumOfLines = 0;
@@ -109,7 +114,7 @@ public class EX2_1 {
     }
 
     /**
-     * Delete all the txt file created.
+     * Delete all the text files that created.
      * @param fileNames Array of file name.
      */
     public static void delete(String[] fileNames) {
