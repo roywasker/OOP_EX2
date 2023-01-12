@@ -29,14 +29,13 @@ And a call method that calculates the number of lines in files with ThreadPool a
 In addition, we write a test class to compare the times of performing the calculation in the three methods.<br><br><br>
 Attached is a picture of the calculation and times for each of the three methods :
 
-![EX2_1 tests](EX2_1 tests.png)
-
+<img src="EX2_1 tests.png" alt="EX2_1 tests.png" title="EX2_1 tests.png">
 
 According to the times we can see threads is the fastest, followed by a relatively small difference the ThreadPool and finally the method without threads.
 
 Attached is a picture of the UML diagram :
 
-![EX2_1 diagram](EX2_1 diagram.png)
+<img src="EX2_1 diagram.png" alt="EX2_1 diagram.png" title="EX2_1 diagram.png">
 
 
 
