@@ -92,8 +92,7 @@ public class Task<T> extends FutureTask<T> implements Comparable<Task<T>> , Call
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Task<?> task = (Task<?>) o;
-        if(this.getCallable() != ((Task<?>) other).getCallable()) return false;
-        return priority == task.priority;
+        return priority == task.priority && Objects.equals(operation, task.operation) && taskType == task.taskType;
     }
 
     /**

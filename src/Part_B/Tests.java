@@ -11,6 +11,7 @@ public class Tests {
 
     @Test
     public void partialTest() {
+        System.out.println("\nTest 1\n");
         CustomExecutor customExecutor = new CustomExecutor();
         var task = Task.createTask(() -> {
             int sum = 0;
@@ -54,6 +55,7 @@ public class Tests {
 
     @Test
     public void Test() {
+        System.out.println("\nTest 2\n");
         CustomExecutor customExecutor = new CustomExecutor();
         for (int i = 0; i < 10; i++) {
             Future task2 = customExecutor.submit(() -> {

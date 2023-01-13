@@ -57,7 +57,6 @@ The Task itself created by two ways: either it gets a Callable and a TaskType, o
   
 The Task is submmiting to a queue, and therefore there has to be a way to compare 2 Tasks.
 Therefore, we implemented an "equal" method based on the Task attributes.
-  
 
 
 
@@ -69,7 +68,9 @@ Therefore, we implemented an "equal" method based on the Task attributes.
 
 
 
+Attached below is a picture of the UML diagram :
 
+<img src="EX2_2 diagram.png" alt="EX2_2 diagram.png" title="EX2_2 diagram.png">
 
 
 <br><br><br>
