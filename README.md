@@ -41,6 +41,20 @@ Attached below is a picture of the UML diagram :
 
 <img src="EX2_1 diagram.png" alt="EX2_1 diagram.png" title="EX2_1 diagram.png">
 
+## Part B
+
+In this part we wrote 2 classes - CustomExecutor and Task, one Test class and we add a given enum called TaskType.
+
+In the Task class we created an object that represent Asynchronous operation that you can run, and that can return a generic value based on the Task needs.
+There is not a guarantee that the Task will work and therefore, in case of a failure it can return an Exception.
+For every Task there is a numerical value that which determines the priority of the Task itself.
+"COMPUTATIONAL" - 1, "IO" - 2, "OTHER" - 3.
+The Task itself created by two ways: either it gets a Callable and a TaskType, or it gets a Callable alone and the TaskType default is "OTHER".
+The Task is submmiting to a queue, and therefore there has to be a way to compare 2 Tasks.
+Therefore, we implemented an "equal" method based on the Task attributes.
+
+
+
 
 
 
