@@ -12,6 +12,13 @@ We calaculated this in three different methods : <br>
 In part B we created ThreadPool that is implemented by priority queue. <br> 
 in addition to each task submitted to the queue you can receive the task's result.
 
+
+## To use the project clone the repositorty
+Enter your IDE and clone the repository:
+  ```sh
+  git clone https://github.com/roywasker/OOP_EX2.git
+  ```
+
 ## Part A
 
 In this part we created 3 departments to perform the task,
@@ -77,10 +84,3 @@ Adapter allows two incompatible class to work together.
 Attached below is a picture of the UML diagram :
 
 <img src="EX2_2 diagram.png" alt="EX2_2 diagram.png" title="EX2_2 diagram.png">
-
-<br><br><br>
-#### To use the project clone the repositorty
-Enter your IDE and clone the repository:
-  ```sh
-  git clone https://github.com/roywasker/OOP_EX2.git
-  ```
