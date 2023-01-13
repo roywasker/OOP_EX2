@@ -58,20 +58,25 @@ The Task itself created by two ways: either it gets a Callable and a TaskType, o
 The Task is submmiting to a queue, and therefore there has to be a way to compare 2 Tasks.
 Therefore, we implemented an "equal" method based on the Task attributes.
 
+In the CustomExecutor class we write a class that defines a method for submitting a generic task to a priority queue, and a method for submitting a generic task created by a Callable<V> and a Type, passed as arguments.
 
+In the CustomExecutor class there is a ThreadPool that contains a priority queue and the number of threads in it are set to be between half of processors available for JVM and the number of processors available for the JVM minus 1.
 
+In to define which task has priority over another task, we implement Comparable in Task class and did an Override to the compareTo method in order to differentiate a task from another task according to its priority.
 
+It has several methods for submitting a task to ThreadPool with Different parameters it received and returning the result.
 
+In addition there is a method for returning the highest priority that is currently in the ThreadPool queue and shutdown the ThreadPool .
 
+Tests class There are several tests that we have added to check the integrity of the ThreadPool and the priority queue.
+<br><br><br>
+In this project,we use Adapter design pattern to convert a runnable object (only an object of this type can be inserted into the ThreadPool) into a Task object that we created.
 
-
-
-
-
+Adapter allows two incompatible class to work together.
+<br><br><br>
 Attached below is a picture of the UML diagram :
 
 <img src="EX2_2 diagram.png" alt="EX2_2 diagram.png" title="EX2_2 diagram.png">
-
 
 <br><br><br>
 #### To use the project clone the repositorty
