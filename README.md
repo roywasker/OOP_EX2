@@ -75,11 +75,11 @@ It has several methods for submitting a task to ThreadPool with Different parame
 
 In addition there is a method for returning the highest priority that is currently in the ThreadPool queue and shutdown the ThreadPool .
 
-Tests class There are several tests that we have added to check the integrity of the ThreadPool and the priority queue.
+Tests class - There are several tests that we added to check the integrity of the ThreadPool and the priority queue.
 <br><br><br>
-In this project,we use Adapter design pattern to convert a runnable object (only an object of this type can be inserted into the ThreadPool) into a Task object that we created.
+In this project, we use Adapter design pattern to convert a runnable object(only an object of this type can be inserted into the ThreadPool) into a Task object that we created.
 
-Adapter allows two incompatible class to work together.
+Adapter allows two incomparable classes to work together.
 <br><br><br>
 Attached below is a picture of the UML diagram :
 
