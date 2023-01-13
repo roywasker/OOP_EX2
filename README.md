@@ -57,6 +57,8 @@ The Task itself created by two ways: either it gets a Callable and a TaskType, o
   
 The Task is submmiting to a queue, and therefore there has to be a way to compare 2 Tasks.
 Therefore, we implemented an "equal" method based on the Task attributes.
+  
+
 
 
 
