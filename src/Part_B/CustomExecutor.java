@@ -7,9 +7,7 @@ public class CustomExecutor<T> extends ThreadPoolExecutor {
     private int maxPriority;
     private int [] arrOfPriority;
 
-    /**
-     * Constructor for create a Custom Executor.
-     */
+    // constructor
     public CustomExecutor(){
         super(Runtime.getRuntime().availableProcessors()/2,Runtime.getRuntime().availableProcessors()-1,300, TimeUnit.MILLISECONDS,new PriorityBlockingQueue<>());
         this.maxPriority=0;
@@ -18,7 +16,7 @@ public class CustomExecutor<T> extends ThreadPoolExecutor {
 
     /**
      * Submits a Callable task for execution and returns a Future representing that task.
-     * @param task the task to submit.
+     * @param task - the task to submit.
      * @return a Future representing pending completion of the task.
      */
     public <T> Future<T> submit(Task <T> task){
@@ -29,7 +27,7 @@ public class CustomExecutor<T> extends ThreadPoolExecutor {
 
     /**
      * Submits a Callable task for execution and returns a Future representing that task.
-     * @param operation the operation to submit.
+     * @param operation - the operation callable to submit.
      * @return a Future representing pending completion of the task.
      */
     public <T> Future<T> submit(Callable <T> operation){
@@ -41,8 +39,8 @@ public class CustomExecutor<T> extends ThreadPoolExecutor {
 
     /**
      * Submits a Callable task for execution and returns a Future representing that task.
-     * @param operation the operation to submit.
-     * @param type TaskType that representing the priority.
+     * @param operation - the operation callable to submit.
+     * @param type - TaskType that representing the priority.
      * @return a Future representing pending completion of the task.
      */
     public <T> Future<T> submit(Callable <T>operation,TaskType type){
@@ -54,7 +52,7 @@ public class CustomExecutor<T> extends ThreadPoolExecutor {
 
     /**
      *Submits a Task <T> task for execution and returns a Future representing that task.
-     * @param task the task to submit.
+     * @param task - the task to submit.
      * @return a Future representing pending completion of the task.
      */
     public <T> Future<T> mySubmit(Task <T> task){
@@ -67,10 +65,10 @@ public class CustomExecutor<T> extends ThreadPoolExecutor {
 
 
     /**
-     * Method invoked prior to executing the given Runnable in the given thread ,
+     * Method invoked prior to executing the given Runnable in the given thread,
      * update the priority in the queue.
-     * @param t the thread that will run task r.
-     * @param r  the task that will be executed.
+     * @param t - the thread that will run task r.
+     * @param r - the task that will be executed.
      */
     @Override
     protected void beforeExecute(Thread t, Runnable r) {

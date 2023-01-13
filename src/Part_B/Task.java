@@ -11,21 +11,14 @@ public class Task<T> extends FutureTask<T> implements Comparable<Task<T>> , Call
     private TaskType taskType;
 
 
-    /**
-     * private Constructor for create a Task for factory method.
-     * @param operation Callable operation to do.
-     * @param type type of the operation.
-     */
+    // private constructor for the createTask factory method that gets 2 parameters
     private Task(Callable<T> operation,TaskType type) {
         super(operation);
         this.priority = type.getPriorityValue();
         this.taskType=type;
     }
 
-    /**
-     *  private Constructor for create a Task for factory method.
-     * @param operation Callable operation to do.
-     */
+    // private constructor for the createTask factory method that gets one parameter
     private Task(Callable<T> operation) {
         this(operation, TaskType.OTHER);
     }
@@ -42,7 +35,7 @@ public class Task<T> extends FutureTask<T> implements Comparable<Task<T>> , Call
 
     /**
      * this is a factory method that creates a new Task object, that gets callable object.
-     * in this case, the TaskType is set to default which is "COMPUTATIONAL"(1).
+     * in this case, the TaskType is set to default which is "OTHER"(3).
      * @param operation - callable object
      * @return new Task object
      */
@@ -51,8 +44,8 @@ public class Task<T> extends FutureTask<T> implements Comparable<Task<T>> , Call
     }
 
     /**
-     * getter method for the priorityValue attribute
-     * @return priorityValue attribute
+     * getter method for the priority attribute
+     * @return priority attribute
      */
     public int getPriority() {
         return this.priority;
@@ -67,10 +60,21 @@ public class Task<T> extends FutureTask<T> implements Comparable<Task<T>> , Call
     }
 
     /**
-     * compare between 2 priority of task
-     *
-     * @param o task to compare
+     * getter method for the callable attribute
+     * @return callable attribute
+     */
+    public Callable getOperation()
+    {
+        return operation;
+    }
+
+    /**
+     * compare 2 Tasks by their priority values.
+     * @param o - the object to be compared.
      * @return
+     *  0 if Tasks objects are equal by priority values
+     * -1 if this Task's priorityValue is smaller than other's priorityValue
+     *  1 if this Task's priorityValue is bigger than other's priorityValue
      */
     @Override
     public int compareTo(Task o) {
@@ -79,7 +83,7 @@ public class Task<T> extends FutureTask<T> implements Comparable<Task<T>> , Call
 
     /**
      * this is the equals method that any Object has, designed to this Task object.
-     * the comparison is by the callable objects, PriorityValue and the TaskType type.
+     * the comparison is by the callable objects and the priority attribute.
      * @param o object
      * @return true if they are equals, false if not.
      */
@@ -88,12 +92,13 @@ public class Task<T> extends FutureTask<T> implements Comparable<Task<T>> , Call
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Task<?> task = (Task<?>) o;
+        if(this.getCallable() != ((Task<?>) other).getCallable()) return false;
         return priority == task.priority;
     }
 
     /**
      * HashCode function.
-     * @return an integer whose value represents the hash value of the input object.
+     * @return an integer which is value represents the hash value of the input object.
      */
     @Override
     public int hashCode() {
@@ -111,11 +116,19 @@ public class Task<T> extends FutureTask<T> implements Comparable<Task<T>> , Call
 
     /**
      * this is the implementation for the call method that belongs to the Callable interface.
-     * @return @return priorityValue attribute.
+     * @return @return priority attribute.
      * @throws Exception
      */
     @Override
-    public Object call() throws Exception {
-        return this.operation.call();
+    public Object call() throws Exception
+    {
+        try
+        {
+            return this.priority;
+        }
+        catch (Exception e)
+        {
+            throw new RuntimeException(e);
+        }
     }
 }
